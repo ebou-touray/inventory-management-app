@@ -32,9 +32,6 @@ MIT License
 Copyright (c) [2020] [Ebou Touray]
 
 
-
-[Back To The Top](#read-me-template)
-
 ---
 
 ## Author Info
