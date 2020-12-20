@@ -18,7 +18,6 @@ This is an inventory Management App which has the basic CRUD functionalities. It
 - Ante Design
 - Styled Components
 
-[Back To The Top](#Inventory-mgt-app)
 
 ---
 
@@ -43,4 +42,3 @@ Copyright (c) [2020] [Ebou Touray]
 - LinkedIn - [Ebou Touray](https://www.linkedin.com/in/ebou-touray-01508116/)
 - Website - [Ebou Touray](https://ebou-touray.netlify.app/)
 
-[Back To The Top](#Inventory-mgt-app)
