@@ -9,6 +9,8 @@
 
 This is an inventory Management App which has the basic CRUD functionalities. It allows the user to add, view, update and delete an item in the inventory.
 
+---
+
 #### Technologies
 
 - React
