@@ -17,15 +17,13 @@ This is an inventory Management App which has the basic CRUD functionalities. It
 - MongoDb
 - Express
 - Node
-- Ante Design
+- Ant Design
 - Styled Components
 
 
 ---
 
-## How To Use
-
-#### Installation
+## Installation
 
 ## License
 
