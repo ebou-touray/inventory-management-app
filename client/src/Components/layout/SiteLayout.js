@@ -8,7 +8,8 @@ import {
   LoginOutlined,
 } from '@ant-design/icons';
 import './Layout.css';
-import "antd/dist/antd.css"
+import "antd/dist/antd.css";
+import { AiOutlineLineChart } from 'react-icons/ai';
 
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -28,13 +29,16 @@ const SiteLayout = () => {
             <div className="logo">Logo</div>
             <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
               <Menu.Item key="1" icon={<HomeOutlined />}>
-                Home
+                <span> Home</span>
               </Menu.Item>
               <Menu.Item key="2" icon={<UserAddOutlined />}>
                 Register
               </Menu.Item>
               <Menu.Item key="3" icon={<LoginOutlined />}>
                 Login
+              </Menu.Item>
+              <Menu.Item key="" icon={<AiOutlineLineChart />}>
+                Stats
               </Menu.Item>
             </Menu>
           </Sider>
@@ -53,7 +57,7 @@ const SiteLayout = () => {
               style={{
                 margin: '24px 16px',
                 padding: 24,
-                minHeight: 755,
+                minHeight: '100vh',
               }}
             >
               Content
