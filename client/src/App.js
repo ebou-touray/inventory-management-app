@@ -1,8 +1,9 @@
 import './App.css';
+import SiteLayout from './Components/layout/SiteLayout'
 
 function App() {
   return (
-    <h1>Inventory Management App</h1>
+    <SiteLayout/>
   );
 }
 
