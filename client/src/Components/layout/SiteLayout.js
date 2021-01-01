@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Register from '../Auth/Register';
+import Login from '../Auth/Login';
+import Stats from '../Stats';
+import Home from '../Home/Home'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -23,22 +28,26 @@ const SiteLayout = () => {
     }
 
     return (
-      <div>
+      <Router>
         <Layout>
           <Sider trigger={null} collapsible collapsed={collapsed}>
             <div className="logo">Logo</div>
             <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
               <Menu.Item key="1" icon={<HomeOutlined />}>
                 <span> Home</span>
+                <Link to="/" />
               </Menu.Item>
               <Menu.Item key="2" icon={<UserAddOutlined />}>
-                Register
+                <span>Register</span>
+                <Link to="/register" />
               </Menu.Item>
               <Menu.Item key="3" icon={<LoginOutlined />}>
-                Login
+                <span>Login</span>
+                <Link to="/login" />
               </Menu.Item>
               <Menu.Item key="" icon={<AiOutlineLineChart />}>
-                Stats
+                <span>Stats</span>
+                <Link to="/stats" />
               </Menu.Item>
             </Menu>
           </Sider>
@@ -60,14 +69,17 @@ const SiteLayout = () => {
                 minHeight: '100vh',
               }}
             >
-              Content
+              <Route exact path="/" component={Home} />
+              <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
+              <Route path="/stats" component={Stats} />
             </Content>
             <Footer style={{ textAlign: 'center' }}>
               Assutech ©2020 Created by Ebou Touray
             </Footer>
           </Layout>
         </Layout>
-      </div>
+      </Router>
     );
 }
 
