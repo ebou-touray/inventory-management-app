@@ -19,7 +19,7 @@ import { AiOutlineLineChart } from 'react-icons/ai';
 const { Header, Sider, Content, Footer } = Layout;
 
 const App = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const toggle = (collapsed) => {
     setCollapsed(!collapsed);
@@ -28,7 +28,18 @@ const App = () => {
   return (
     <Router>
       <Layout>
-        <Sider trigger={null} collapsible collapsed={collapsed}>
+        <Sider
+          trigger={null}
+          collapsible
+          collapsed={collapsed}
+          style={{
+            overflow: 'auto',
+            height: '100vh',
+            position: 'sticky',
+            top: 0,
+            left: 0,
+          }}
+        >
           <div className="logo">Logo</div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<HomeOutlined />}>
@@ -49,6 +60,7 @@ const App = () => {
             </Menu.Item>
           </Menu>
         </Sider>
+
         <Layout className="site-layout">
           <Header className="site-layout-background" style={{ padding: 0 }}>
             {React.createElement(
