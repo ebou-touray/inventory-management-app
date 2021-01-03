@@ -19,9 +19,9 @@ import { AiOutlineLineChart } from 'react-icons/ai';
 const { Header, Sider, Content, Footer } = Layout;
 
 const App = () => {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
-  const toggle = (collapsed) => {
+  const toggle = () => {
     setCollapsed(!collapsed);
   };
 
@@ -40,7 +40,9 @@ const App = () => {
             left: 0,
           }}
         >
-          <div className="logo">Logo</div>
+          <div className="logo">
+            <Link to="/">Logo</Link>
+          </div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<HomeOutlined />}>
               <span> Home</span>
@@ -54,7 +56,7 @@ const App = () => {
               <span>Login</span>
               <Link to="/login" />
             </Menu.Item>
-            <Menu.Item key="" icon={<AiOutlineLineChart />}>
+            <Menu.Item key="4" icon={<AiOutlineLineChart />}>
               <span>Stats</span>
               <Link to="/stats" />
             </Menu.Item>
@@ -62,7 +64,16 @@ const App = () => {
         </Sider>
 
         <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }}>
+          <Header
+            className="site-layout-background"
+            style={{
+              padding: 0,
+              overflow: 'auto',
+              position: 'sticky',
+              top: 0,
+              left: 0,
+            }}
+          >
             {React.createElement(
               collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
               {

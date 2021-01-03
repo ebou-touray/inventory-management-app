@@ -1,5 +1,5 @@
 .trigger {
- font-size: 18px;
+  font-size: 18px;
   line-height: 64px;
   padding: 0 24px;
   cursor: pointer;
@@ -10,6 +10,7 @@
 }
 
 .logo{
+  border-radius: 5px;
   height: 32px;
   background: rgba(255, 255, 255, 0.3);
   margin: 16px;
@@ -19,4 +20,3 @@
 .site-layout .site-layout-background {
   background: #fff;
 }
-
