@@ -1,22 +1,20 @@
 const express = require('express');
-const dotenv = require('dotenv');
-import colors from 'colors';
 
-dotenv.config();
+//import env file
+require('dotenv').config();
 
+//init app
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('API is running...');
-});
+//import mongodb from db folder
+require('./db/initMongoose');
 
-app.get('/api/regsiter', (req, res) => {
-  res.send('API is running...');
-});
+//middleware, body
+app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(
-  PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+//start server
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
 );
