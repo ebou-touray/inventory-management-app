@@ -1,7 +1,8 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Checkbox, Typography } from 'antd';
 import { UserOutlined, LockOutlined, LoginOutlined } from '@ant-design/icons';
 import styles from './Login.module.css';
+const { Title } = Typography;
 
 const Login = () => {
   const onFinish = (values) => {
@@ -15,6 +16,11 @@ const Login = () => {
       initialValues={{ remember: true }}
       onFinish={onFinish}
     >
+      <Form.Item>
+        <Title className="title" level={3}>
+         Login
+        </Title>
+      </Form.Item>
       <Form.Item
         name="username"
         label="Username"
