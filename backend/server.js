@@ -1,20 +1,18 @@
 const express = require('express');
-
-//import env file
+const app  = express();
+const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
+app.use(cookieParser());
+app.use(express.json());
 require('dotenv').config();
 
-//init app
-const app = express();
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+  console.log('Successfully connected to DB');
+});
 
-//import mongodb from db folder
-require('./db/initMongoose');
+const userRouter = require('./routes/User');
+app.use('/user', userRouter);
 
-//middleware, body
-app.use(express.json());
-
-const PORT = process.env.PORT || 5000;
-
-//start server
-app.listen(PORT, () =>
-  console.log(`Server running on http://localhost:${PORT}`)
-);
+app.listen(5000, () => {
+  console.log('Express Server started');
+});

@@ -87,7 +87,7 @@ const App = () => {
             style={{
               margin: '24px 16px',
               padding: 24,
-              minHeight: '100vh',
+              minHeight: '280px',
             }}
           >
             <Route exact path="/" component={Home} />
