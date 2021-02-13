@@ -1,30 +1,83 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { Button, Space, Typography } from 'antd';
+import { Form, Input, Button, Typography } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import styles from './Home.css';
+import Image from '../../assets/home-img.jpg';
+
 const { Title } = Typography;
 
 const Home = () => {
-    return (
-      <section style={{ textAlign: 'center' }}>
-        <div className="dark-overlay">
-          <div className="landing-inner">
-            <Title>Inventory Management App</Title>
-            <p className="lead">
-              Use this app to add, edit, delete and search items in the
-              inventory
-            </p>
-            <Space>
-              <Button type="primary">
-                <Link to="/register">Register</Link>
-              </Button>
-              <Button type="primary">
-                <Link to="/login">Login</Link>
-              </Button>
-            </Space>
-          </div>
-        </div>
-      </section>
-    );
-}
+  const onFinish = (values) => {
+    console.log('Received values of form: ', values);
+  };
 
-export default Home
+  return (
+    <>
+      <div className="container">
+        <div className="form">
+          <Form
+            // onSubmit={onSubmit}
+            className={styles.Home}
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
+          >
+            <Form.Item>
+              <Title className="title" level={3}>
+                Login
+              </Title>
+            </Form.Item>
+
+            <Form.Item
+              name="username"
+              label="Username"
+              rules={[
+                { required: true, message: 'Please input your Username!' },
+              ]}
+            >
+              <Input
+                autoComplete="username"
+                type="text"
+                name="username"
+                // onChange={onChange}
+                prefix={<UserOutlined className="site-form-item-icon" />}
+                placeholder="Enter Username"
+              />
+            </Form.Item>
+            <Form.Item
+              name="password"
+              label="Password"
+              rules={[
+                { required: true, message: 'Please input your Password!' },
+              ]}
+            >
+              <Input
+                type="password"
+                name="password"
+                autoComplete="current-password"
+                // onChange={onChange}
+                prefix={<LockOutlined className="site-form-item-icon" />}
+                placeholder="Enter Password"
+              />
+            </Form.Item>
+            <Form.Item>
+              <Button
+                // onSubmit={onSubmit}
+                name="submit"
+                type="submit"
+                className="login-form-button"
+              >
+                Log in
+              </Button>
+              Or <a href="/register">register now!</a>
+            </Form.Item>
+          </Form>
+        </div>
+        <div className="home-image">
+          <img src={Image}></img>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Home;
