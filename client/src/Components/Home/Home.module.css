@@ -1,18 +1,20 @@
 .Home {
-
   background-color: white;
   border-radius: 3px;
   box-shadow: 0 0 10px #00276617;
-  width:800px;
-  max-width: 500px;
+  width: 400px;
+  max-width: 1800px;
   margin: auto 0 0;
   padding: 40px;
+  height: 550px; 
 }
-.container {
+.Container {
   display: flex;
 }
-.home-image {
+.Image {
   display: flex;
-  width: 800px;
-  padding-left: 50px;
+  width: 780px;
+   height: 550px;
+   height: 550px;
+   padding-left: 50px;
 }

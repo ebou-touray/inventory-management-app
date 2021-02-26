@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Button, Typography } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import styles from './Home.css';
+import styles from './Home.module.css';
 import Image from '../../assets/home-img.jpg';
 
 const { Title } = Typography;
@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="container">
+      <div className={styles.Container}>
         <div className="form">
           <Form
             // onSubmit={onSubmit}
@@ -72,8 +72,8 @@ const Home = () => {
             </Form.Item>
           </Form>
         </div>
-        <div className="home-image">
-          <img src={Image}></img>
+        <div className={styles.Image}>
+          <img src={Image} alt="home"></img>
         </div>
       </div>
     </>
