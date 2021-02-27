@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Layout, Menu } from 'antd';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { AiOutlineLineChart } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
-import {
-  HomeOutlined,
-  LoginOutlined,
-  UserAddOutlined,
-} from '@ant-design/icons';
+import SIDEBAR_MENU_OPTIONS from './Sidebar.navigations';
 
 import SidebarWrapper from './Sidebar.styles';
+import SidebarMenu from './SidebarMenu';
 
 const { Sider } = Layout;
 
@@ -30,10 +26,22 @@ const Sidebar = ({ collapsed }) => {
         }}
       >
         <div className="logo">
-          <Link to="/">Inventory Management System</Link>
+          <Link to="/">Inventory Management</Link>
         </div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-          <Menu.Item key="1" icon={<HomeOutlined />}>
+        <Menu
+          theme="dark"
+          mode="inline"
+          defaultSelectedKeys={['1']}
+        >
+          {SIDEBAR_MENU_OPTIONS.map((option) => {
+            return (
+              <SidebarMenu
+                item={option}
+                key={option.key}
+              />
+            )
+          })}
+          {/* <Menu.Item key="1" icon={<HomeOutlined />}>
             <span> Home</span>
             <Link to="/" />
           </Menu.Item>
@@ -48,7 +56,7 @@ const Sidebar = ({ collapsed }) => {
           <Menu.Item key="4" icon={<AiOutlineLineChart />}>
             <span>Stats</span>
             <Link to="/stats" />
-          </Menu.Item>
+          </Menu.Item> */}
         </Menu>
       </Sider>
     </SidebarWrapper>
