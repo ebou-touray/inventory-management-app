@@ -6,8 +6,7 @@ import Login from './Components/Auth/Login';
 import Stats from './Components/Stats';
 import Home from './Components/Home/Home';
 import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
+  MenuOutlined,
   HomeOutlined,
   UserAddOutlined,
   LoginOutlined,
@@ -15,6 +14,7 @@ import {
 import './App.css';
 import 'antd/dist/antd.css';
 import { AiOutlineLineChart } from 'react-icons/ai';
+import Sidebar from './Components/Sidebar/Sidebar';
 
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -28,40 +28,7 @@ const App = () => {
   return (
     <Router>
       <Layout>
-        <Sider
-          trigger={null}
-          collapsible
-          collapsed={collapsed}
-          style={{
-            overflow: 'auto',
-            height: '100vh',
-            position: 'sticky',
-            top: 0,
-            left: 0,
-          }}
-        >
-          <div className="logo">
-            <Link to="/">Logo</Link>
-          </div>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1" icon={<HomeOutlined />}>
-              <span> Home</span>
-              <Link to="/" />
-            </Menu.Item>
-            <Menu.Item key="2" icon={<UserAddOutlined />}>
-              <span>Register</span>
-              <Link to="/register" />
-            </Menu.Item>
-            <Menu.Item key="3" icon={<LoginOutlined />}>
-              <span>Login</span>
-              <Link to="/login" />
-            </Menu.Item>
-            <Menu.Item key="4" icon={<AiOutlineLineChart />}>
-              <span>Stats</span>
-              <Link to="/stats" />
-            </Menu.Item>
-          </Menu>
-        </Sider>
+        <Sidebar collapsed={collapsed} />
 
         <Layout className="site-layout">
           <Header
@@ -75,7 +42,7 @@ const App = () => {
             }}
           >
             {React.createElement(
-              collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+              collapsed ? MenuOutlined : MenuOutlined,
               {
                 className: 'trigger',
                 onClick: toggle,
