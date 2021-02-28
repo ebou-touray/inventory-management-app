@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 
 import TopbarWrapper from './Topbar.styles';
 
-const { Content, Footer, Header } = Layout;
+const { Header } = Layout;
 
 export default function Topbar() {
   const styling = {
@@ -26,8 +26,8 @@ export default function Topbar() {
             onClick: toggle,
           }
         )} */}
-        <p>Hello</p>
+        <button>Toggle Button</button>
       </Header>
     </TopbarWrapper>
-  )
-}
+  );
+};

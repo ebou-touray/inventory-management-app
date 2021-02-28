@@ -1,4 +1,4 @@
-import React, { lazy, Lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, useRouteMatch, Switch } from 'react-router-dom';
 
 const routes = [

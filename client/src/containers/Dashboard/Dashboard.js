@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import { Layout } from 'antd';
 
 import DashboardRoutes from './DashboardRoutes';
-import Sidebar from '../../Components/Sidebar/Sidebar';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 import { DashboardGlobalStyles, DashboardWrapper } from './Dashboard.styles';
 import Topbar from '../Topbar/Topbar';
 
-const { Content, Footer, Header } = Layout;
+const { Content, Footer } = Layout;
 
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -32,7 +32,7 @@ const Dashboard = () => {
       textAlign: 'center',
       borderTop: '1px solid #ededed',
     }
-  }
+  };
 
   return (
     <DashboardWrapper>

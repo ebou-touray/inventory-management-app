@@ -9,7 +9,24 @@ import SidebarMenu from './SidebarMenu';
 
 const { Sider } = Layout;
 
+
+
 const Sidebar = ({ collapsed }) => {
+  const styles = {
+    sidebar: {
+      height: '100vh',
+      overflow: 'auto',
+      position: 'sticky',
+      top: 0,
+      left: 0,
+    },
+    logo: {
+      margin: '16px',
+      color: '#fff',
+      height: '32px',
+    }
+  };
+
   return (
     <SidebarWrapper>
       <Sider
@@ -17,15 +34,9 @@ const Sidebar = ({ collapsed }) => {
         collapsible
         trigger={null}
         collapsed={collapsed}
-        style={{
-          overflow: 'auto',
-          height: '100vh',
-          position: 'sticky',
-          top: 0,
-          left: 0,
-        }}
+        style={styles.sidebar}
       >
-        <div className="logo">
+        <div style={styles.logo}>
           <Link to="/">Inventory Management</Link>
         </div>
         <Menu
@@ -33,30 +44,12 @@ const Sidebar = ({ collapsed }) => {
           mode="inline"
           defaultSelectedKeys={['1']}
         >
-          {SIDEBAR_MENU_OPTIONS.map((option) => {
-            return (
-              <SidebarMenu
-                item={option}
-                key={option.key}
-              />
-            )
-          })}
-          {/* <Menu.Item key="1" icon={<HomeOutlined />}>
-            <span> Home</span>
-            <Link to="/" />
-          </Menu.Item>
-          <Menu.Item key="2" icon={<UserAddOutlined />}>
-            <span>Register</span>
-            <Link to="/register" />
-          </Menu.Item>
-          <Menu.Item key="3" icon={<LoginOutlined />}>
-            <span>Login</span>
-            <Link to="/login" />
-          </Menu.Item>
-          <Menu.Item key="4" icon={<AiOutlineLineChart />}>
-            <span>Stats</span>
-            <Link to="/stats" />
-          </Menu.Item> */}
+          {SIDEBAR_MENU_OPTIONS.map((option) => (
+            <SidebarMenu
+              item={option}
+              key={option.key}
+            />
+          ))}
         </Menu>
       </Sider>
     </SidebarWrapper>

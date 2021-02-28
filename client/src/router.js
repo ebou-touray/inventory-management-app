@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import ErrorBoundary from './ErrorBoundary';
-import LoadingSpinner from './Components/LoadingSpinner/LoadingSpinner';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 
 const Dashboard = lazy(() => import('./containers/Dashboard/Dashboard'));
 

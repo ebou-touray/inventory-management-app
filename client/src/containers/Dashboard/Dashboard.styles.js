@@ -23,4 +23,11 @@ export const DashboardWrapper = styled.div`
       }
     }
   }
+
+  .imsLayoutContent {
+    width: 100%;
+    height: 100%;
+    padding: 35px;
+    background: #fff;
+  }
 `;
